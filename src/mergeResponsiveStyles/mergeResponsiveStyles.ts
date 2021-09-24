@@ -1,10 +1,10 @@
-import { createResponsiveStyleParser } from "../parseResponsiveStyle";
-import { range, unary } from "../utils";
-import type { StyleValue } from "../types";
 import { map, normalizeInputs } from "../helpers";
+import type { StyleValue } from "../types";
 
-export const mergeResponsiveStyles = (...styles: number[][]) => {
-  const values = normalizeInputs(...styles as any)
+const addValues = (a: number, b: number) => a + b;
 
-  return map((a, b) => a + b)(...values);
+export const mergeResponsiveStyles = (...styles: StyleValue[]) => {
+  const values = normalizeInputs(...styles)
+
+  return map(addValues)(...values);
 };

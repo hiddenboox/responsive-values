@@ -11,6 +11,5 @@ describe('map', () => {
     const a = map((a, b) => {
       return a + b
     })(...values as any)
-    console.log(a)
   })
 })
